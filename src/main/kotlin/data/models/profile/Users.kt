@@ -19,7 +19,9 @@ enum class UserRole { ADMIN, CUSTOMER }
 @ExposedTable(
     "users",
     "id",
-    groupName = "Profile"
+    groupName = "Profile",
+    singularName = "User",
+    pluralName = "Users",
 )
 @AdminQueries(
     searches = ["username", "email", "phone_number"],
@@ -66,4 +68,6 @@ object Users : Table() {
     @ColumnInfo("updated_at")
     @AutoNowDate(updateOnChange = true)
     val updatedAt = datetime("updated_at").defaultExpression(CurrentDateTime)
+
+    override val primaryKey = PrimaryKey(id)
 }

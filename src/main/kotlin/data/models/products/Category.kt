@@ -6,6 +6,7 @@ import annotations.info.IgnoreColumn
 import annotations.query.AdminQueries
 import annotations.references.ManyToOneReferences
 import annotations.rich_editor.RichEditor
+import annotations.text_area.TextAreaField
 import org.jetbrains.exposed.sql.Table
 
 @ExposedTable(
@@ -24,7 +25,7 @@ object Category : Table() {
     val id = integer("id").autoIncrement()
     val name = varchar("name", 100).uniqueIndex()
 
-    @RichEditor
+    @TextAreaField
     val description = text("description").nullable()
 
     @ColumnInfo("parent_category_id", nullable = true, verboseName = "Parent category")
