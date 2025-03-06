@@ -9,6 +9,7 @@ import annotations.limit.Limits
 import annotations.query.AdminQueries
 import annotations.references.ManyToOneReferences
 import annotations.rich_editor.RichEditor
+import annotations.uploads.LocalUpload
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.kotlin.datetime.CurrentDateTime
 import org.jetbrains.exposed.sql.kotlin.datetime.datetime
@@ -44,6 +45,7 @@ object Product : Table() {
     val stockQuantity = integer("stock_quantity").default(0)
 
     @ColumnInfo("image_url", nullable = true)
+    @LocalUpload
     val imageUrl = varchar("image_url", 255).nullable()
 
     @ColumnInfo(

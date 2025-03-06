@@ -14,7 +14,7 @@ import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.kotlin.datetime.CurrentDateTime
 import org.jetbrains.exposed.sql.kotlin.datetime.datetime
 
-enum class UserRole { ADMIN, CUSTOMER }
+enum class UserRole { ADMIN, CUSTOMER, BUYER }
 
 @ExposedTable(
     "users",
@@ -58,7 +58,7 @@ object Users : Table() {
     @Limits(maxLength = 20)
     val phoneNumber = varchar("phone_number", 20).nullable()
 
-    @Enumeration("ADMIN", "CUSTOMER")
+    @Enumeration("ADMIN", "CUSTOMER", "BUYER")
     val role = enumerationByName("role", 50, UserRole::class)
 
     @ColumnInfo("created_at", verboseName = "Created at")

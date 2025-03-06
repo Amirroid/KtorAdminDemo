@@ -2,6 +2,7 @@ package ir.amirreza.data.models.cart
 
 import annotations.exposed.ExposedTable
 import annotations.info.ColumnInfo
+import annotations.info.IgnoreColumn
 import annotations.references.ManyToOneReferences
 import ir.amirreza.data.models.products.Product
 import org.jetbrains.exposed.sql.Table
@@ -14,6 +15,7 @@ import org.jetbrains.exposed.sql.Table
     groupName = "Cart"
 )
 object CartItem : Table() {
+    @IgnoreColumn
     val id = integer("id").autoIncrement()
 
     @ColumnInfo("cart_id", verboseName = "Cart")
