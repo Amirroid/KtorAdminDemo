@@ -1,5 +1,6 @@
 package ir.amirreza.data.models.cart
 
+import annotations.display.DisplayFormat
 import annotations.exposed.ExposedTable
 import annotations.info.ColumnInfo
 import annotations.info.IgnoreColumn
@@ -14,11 +15,14 @@ import org.jetbrains.exposed.sql.Table
 @AdminQueries(
     searches = ["user_id.full_name"]
 )
+@DisplayFormat(
+    format = "User: {user_id.full_name}",
+)
 object Cart : Table() {
     @IgnoreColumn
     val id = integer("id").autoIncrement()
 
-    @ColumnInfo("user_id")
+    @ColumnInfo("user_id", verboseName = "User")
     @OneToOneReferences("product", "id")
     val userId = integer("user_id").references(Users.id, onDelete = ReferenceOption.CASCADE)
 

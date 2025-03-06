@@ -1,6 +1,7 @@
 package ir.amirreza.data.models.products
 
 import annotations.date.AutoNowDate
+import annotations.display.DisplayFormat
 import annotations.display.PanelDisplayList
 import annotations.exposed.ExposedTable
 import annotations.info.ColumnInfo
@@ -27,6 +28,9 @@ import org.jetbrains.exposed.sql.kotlin.datetime.datetime
 @AdminQueries(
     searches = ["name"],
     filters = ["category_id"]
+)
+@DisplayFormat(
+    format = "{name}: {price}$"
 )
 object Product : Table() {
     @IgnoreColumn

@@ -1,5 +1,6 @@
 package ir.amirreza.data.models.products
 
+import annotations.display.DisplayFormat
 import annotations.exposed.ExposedTable
 import annotations.info.ColumnInfo
 import annotations.info.IgnoreColumn
@@ -18,6 +19,10 @@ import org.jetbrains.exposed.sql.Table
 )
 @AdminQueries(
     searches = ["name", "description"],
+    filters = ["parent_category_id"]
+)
+@DisplayFormat(
+    format = "{parent_category_id.name} -> {id}: {name}"
 )
 object Category : Table() {
     @IgnoreColumn

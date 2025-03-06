@@ -47,7 +47,7 @@ dependencies {
 
 
     // KtorAdmin library
-    val ktorAdmin = "0.0.1-alpha4"
+    val ktorAdmin = "0.0.1-alpha5"
     implementation("io.github.amirroid:KtorAdmin:$ktorAdmin")
     ksp("io.github.amirroid:KtorAdmin:$ktorAdmin")
 
