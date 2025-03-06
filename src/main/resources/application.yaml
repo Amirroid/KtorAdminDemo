@@ -3,7 +3,8 @@ ktor:
     modules:
       - ir.amirreza.ApplicationKt.module
   deployment:
-    port: 8080
+    port: "$PORT:8080"
+    host: 0.0.0.0
 
 db:
   username: "amirreza"
