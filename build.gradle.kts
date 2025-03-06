@@ -45,6 +45,8 @@ dependencies {
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
+    // Auth
+    implementation("io.ktor:ktor-server-auth")
 
     // KtorAdmin library
     val ktorAdmin = "0.0.1-alpha5"

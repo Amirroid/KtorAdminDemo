@@ -18,7 +18,6 @@ class DatabasesService(database: Database) {
             SchemaUtils.create(Product)
             SchemaUtils.create(Cart)
             SchemaUtils.create(CartItem)
-            SchemaUtils.create(TokenTable)
         }
     }
 }

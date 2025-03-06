@@ -1,7 +1,6 @@
 package ir.amirreza
 
-import io.ktor.server.application.Application
-import io.ktor.server.application.install
+import io.ktor.server.application.*
 import ir.amirreza.dashboard.AdminDashboard
 import plugins.KtorAdmin
 
@@ -20,5 +19,7 @@ fun Application.configureAdmin() {
         mediaPath = MEDIA_PATH
         mediaRoot = MEDIA_ROOT
         adminDashboard = AdminDashboard()
+        authenticateName = "admin"
+        loginFields = ir.amirreza.loginFields
     }
 }
