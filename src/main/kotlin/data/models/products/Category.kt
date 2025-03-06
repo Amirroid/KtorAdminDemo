@@ -1,9 +1,12 @@
 package ir.amirreza.data.models.products
 
 import annotations.exposed.ExposedTable
+import annotations.info.ColumnInfo
 import annotations.info.IgnoreColumn
 import annotations.query.AdminQueries
+import annotations.references.ManyToOneReferences
 import annotations.text_area.TextAreaField
+import org.jetbrains.exposed.sql.ReferenceOption
 import org.jetbrains.exposed.sql.Table
 
 @ExposedTable(
@@ -23,6 +26,10 @@ object Category : Table() {
 
     @TextAreaField
     val description = text("description").nullable()
+
+    @ManyToOneReferences("category", "id")
+    @ColumnInfo("parent_category_id", nullable = true)
+    val parentCategoryId = integer("parent_category_id").references(id, onDelete = ReferenceOption.SET_NULL).nullable()
 
     override val primaryKey = PrimaryKey(id)
 }
