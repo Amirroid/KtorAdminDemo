@@ -1,6 +1,7 @@
 package ir.amirreza.data.services
 
 import authentication.KtorAdminPrincipal
+import ir.amirreza.data.crypto.PasswordHasher
 import ir.amirreza.data.models.profile.TokenTable
 import ir.amirreza.data.models.profile.UserRole
 import ir.amirreza.data.models.profile.Users
@@ -19,11 +20,20 @@ class TokenService(val database: Database) {
         }
     }
 
+
     suspend fun getTokenWithUsernameAndPassword(username: String, password: String): String? = dbQuery {
-        val userId = Users.selectAll().where { (Users.username eq username) and (Users.passwordHash eq password) }
-            .firstOrNull()?.get(Users.id)
-        userId?.let { id ->
-            TokenTable.selectAll().where { TokenTable.userId eq id }.firstOrNull()?.get(TokenTable.token)
+        val user = Users.selectAll()
+            .where { Users.username eq username }
+            .firstOrNull()
+
+        val storedHash = user?.get(Users.passwordHash)
+
+        if (storedHash != null && PasswordHasher.verify(password, storedHash)) {
+            val userId = user[Users.id]
+            TokenTable.selectAll().where { TokenTable.userId eq userId }
+                .firstOrNull()?.get(TokenTable.token)
+        } else {
+            null
         }
     }
 

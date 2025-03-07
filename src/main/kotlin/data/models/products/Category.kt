@@ -22,7 +22,7 @@ import org.jetbrains.exposed.sql.Table
     filters = ["parent_category_id"]
 )
 @DisplayFormat(
-    format = "{parent_category_id.name} -> {id}: {name}"
+    format = "Category: {parent_category_id.name} -> {id}: {name}"
 )
 object Category : Table() {
     @IgnoreColumn

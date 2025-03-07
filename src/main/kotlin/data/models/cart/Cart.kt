@@ -23,7 +23,7 @@ object Cart : Table() {
     val id = integer("id").autoIncrement()
 
     @ColumnInfo("user_id", verboseName = "User")
-    @OneToOneReferences("product", "id")
+    @OneToOneReferences("users", "id")
     val userId = integer("user_id").references(Users.id, onDelete = ReferenceOption.CASCADE)
 
     override val primaryKey = PrimaryKey(id)

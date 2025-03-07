@@ -12,6 +12,7 @@ import annotations.limit.Limits
 import annotations.query.AdminQueries
 import annotations.status.StatusStyle
 import annotations.text_area.TextAreaField
+import annotations.value_mapper.ValueMapper
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.kotlin.datetime.CurrentDateTime
 import org.jetbrains.exposed.sql.kotlin.datetime.datetime
@@ -48,6 +49,7 @@ object Users : Table() {
     @ColumnInfo("password_hash", verboseName = "Password")
     @Limits(maxLength = 255)
     @Confirmation
+    @ValueMapper("password")
     val passwordHash = varchar("password_hash", 255)
 
     @Limits(maxLength = 255)

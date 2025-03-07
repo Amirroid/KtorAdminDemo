@@ -7,6 +7,7 @@ import annotations.exposed.ExposedTable
 import annotations.info.ColumnInfo
 import annotations.info.IgnoreColumn
 import annotations.limit.Limits
+import annotations.preview.Preview
 import annotations.query.AdminQueries
 import annotations.references.ManyToOneReferences
 import annotations.rich_editor.RichEditor
@@ -43,6 +44,7 @@ object Product : Table() {
 
     @RichEditor
     val description = text("description")
+
     val price = long("price")
 
     @ColumnInfo("stock_quantity", defaultValue = "0")
@@ -50,6 +52,7 @@ object Product : Table() {
 
     @ColumnInfo("image_url", nullable = true)
     @LocalUpload
+    @Preview("image")
     val imageUrl = varchar("image_url", 255).nullable()
 
     @ColumnInfo(
