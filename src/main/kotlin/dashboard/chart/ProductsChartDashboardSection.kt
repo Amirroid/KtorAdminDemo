@@ -21,13 +21,15 @@ class ProductsChartDashboardSection : ChartDashboardSection() {
     override val chartStyle: AdminChartStyle
         get() = AdminChartStyle.LINE
 
+
     override fun provideBorderColor(label: String, valueField: String): String? {
-        return "#FFB84D"
+        return "black"
     }
 
     override fun provideFillColor(label: String, valueField: String): String? {
-        return "#FFB84D"
+        return "wheat"
     }
+
 
     override val tension: Float
         get() = .4f

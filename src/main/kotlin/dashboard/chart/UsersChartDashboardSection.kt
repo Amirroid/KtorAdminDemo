@@ -20,18 +20,18 @@ class UsersChartDashboardSection : ChartDashboardSection() {
             )
         )
     override val chartStyle: AdminChartStyle
-        get() = AdminChartStyle.RADAR
+        get() = AdminChartStyle.PIE
 
     override fun provideBorderColor(label: String, valueField: String): String? {
+        return null
+    }
+
+    override fun provideFillColor(label: String, valueField: String): String? {
         return when (label) {
             UserRole.CUSTOMER.name -> "blue"
             UserRole.BUYER.name -> "red"
             else -> "green"
         }
-    }
-
-    override fun provideFillColor(label: String, valueField: String): String? {
-        return "#FFB84D"
     }
 
     override val borderWidth: Float
