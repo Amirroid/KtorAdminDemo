@@ -41,6 +41,7 @@ jobs:
 
       # Step 7: Deploy the Docker container to Railway
       - name: Deploy to Railway
-        run: railway up --docker
+        run: |
+          railway up --docker --project ${{ secrets.RAILWAY_PROJECT_ID }}
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
