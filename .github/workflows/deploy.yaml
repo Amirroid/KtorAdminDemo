@@ -4,7 +4,7 @@ name: Build and Deploy to Railway
 on:
   push:
     branches:
-      - main
+      - main  # or the branch you want to trigger the workflow on
 
 jobs:
   build:
@@ -42,6 +42,6 @@ jobs:
       # Step 7: Deploy the Docker container to Railway
       - name: Deploy to Railway
         run: |
-          railway up --docker --project ${{ secrets.RAILWAY_PROJECT_ID }}
+          railway up --docker --distribution production --project ${{ secrets.RAILWAY_PROJECT_ID }}
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
