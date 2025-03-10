@@ -29,13 +29,19 @@ jobs:
       - name: Build Docker image
         run: docker build -t ktor-app . # The Dockerfile is in the same directory
 
-      # Step 5: Log in to Railway CLI using your Railway token
+      # Step 5: Install Railway CLI
+      - name: Install Railway CLI
+        run: |
+          curl -sSL https://railway.app/cli | sh
+          sudo mv railway /usr/local/bin/railway
+
+      # Step 6: Log in to Railway CLI using your Railway token
       - name: Login to Railway
         uses: railwayapp/railway-cli@v1
         with:
           token: ${{ secrets.RAILWAY_TOKEN }}
 
-      # Step 6: Deploy the Docker container to Railway
+      # Step 7: Deploy the Docker container to Railway
       - name: Deploy to Railway
         run: |
           railway up --docker
