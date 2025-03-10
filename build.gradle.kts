@@ -53,11 +53,9 @@ dependencies {
     implementation("io.ktor:ktor-server-auth")
 
     // KtorAdmin library
-    val ktorAdmin = "0.0.1-alpha7"
-    implementation("io.github.amirroid:KtorAdminLibrary")
-    ksp("io.github.amirroid:KtorAdminLibrary")
-//    implementation("io.github.amirroid:KtorAdmin:$ktorAdmin")
-//    ksp("io.github.amirroid:KtorAdmin:$ktorAdmin")
+    val ktorAdmin = "0.0.1-alpha8"
+    implementation("io.github.amirroid:KtorAdmin:$ktorAdmin")
+    ksp("io.github.amirroid:KtorAdmin:$ktorAdmin")
 
     // Postgres
     implementation("org.postgresql:postgresql:42.7.4")
