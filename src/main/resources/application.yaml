@@ -1,0 +1,14 @@
+ktor:
+  development: true
+  application:
+    modules:
+      - ir.amirreza.ApplicationKt.module
+  deployment:
+    port: "$PORT:8080"
+    host: 0.0.0.0
+
+db:
+  username: "amirreza"
+  password: "your_password"
+  url: "jdbc:postgresql://db:5432/postgres"
+  driver: "org.postgresql.Driver"

@@ -1,0 +1,28 @@
+services:
+  ktor-app:
+    build: .
+    container_name: ktor_app
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: "jdbc:postgresql://db:5432/postgres"
+      DB_USER: "amirreza"
+      DB_PASSWORD: "your_password"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: ktor_db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: amirreza
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
