@@ -1,0 +1,43 @@
+name: Build and Deploy to Railway
+
+# Trigger the workflow on every commit to the main branch
+on:
+  push:
+    branches:
+      - main  # or the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up JDK 17 for building the project
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      # Step 3: Build the project using Gradle (adjust if using Maven)
+      - name: Build project with Gradle
+        run: ./gradlew build # if using Gradle
+
+      # Step 4: Build the Docker image from the Dockerfile
+      - name: Build Docker image
+        run: docker build -t ktor-app . # The Dockerfile is in the same directory
+
+      # Step 5: Log in to Railway CLI using your Railway token
+      - name: Login to Railway
+        uses: railwayapp/railway-cli@v1
+        with:
+          token: ${{ secrets.RAILWAY_TOKEN }}
+
+      # Step 6: Deploy the Docker container to Railway
+      - name: Deploy to Railway
+        run: |
+          railway up --docker
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
