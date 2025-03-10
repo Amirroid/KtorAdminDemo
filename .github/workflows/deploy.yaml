@@ -4,7 +4,7 @@ name: Build and Deploy to Railway
 on:
   push:
     branches:
-      - main  # or the branch you want to trigger the workflow on
+      - main
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t ktor-app . # The Dockerfile is in the same directory
 
-      # Step 5: Install Railway CLI
+      # Step 5: Install Railway CLI manually
       - name: Install Railway CLI
         run: |
           curl -sSL https://railway.app/cli | sh
@@ -37,13 +37,10 @@ jobs:
 
       # Step 6: Log in to Railway CLI using your Railway token
       - name: Login to Railway
-        uses: railwayapp/railway-cli@v1
-        with:
-          token: ${{ secrets.RAILWAY_TOKEN }}
+        run: railway login --token ${{ secrets.RAILWAY_TOKEN }}
 
       # Step 7: Deploy the Docker container to Railway
       - name: Deploy to Railway
-        run: |
-          railway up --docker
+        run: railway up --docker
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
