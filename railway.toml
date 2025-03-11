@@ -1,2 +1,6 @@
+[env]
+PORT = "8080"
+JAVA_VERSION = "17"
+
 [start]
 cmd = "java -jar build/libs/ktor-app.jar"

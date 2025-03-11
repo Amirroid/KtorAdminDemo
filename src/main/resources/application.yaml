@@ -1,6 +1,7 @@
 ktor:
   development: true
   application:
+    development: true
     modules:
       - ir.amirreza.ApplicationKt.module
   deployment:
@@ -8,7 +9,7 @@ ktor:
     host: 0.0.0.0
 
 db:
-  username: "amirreza"
-  password: "your_password"
-  url: "jdbc:postgresql://localhost:5432/postgres"
+  username: "${DB_USERNAME:amirreza"
+  password: "${DB_PASSWORD:your_password"
+  url: "${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres"
   driver: "org.postgresql.Driver"
