@@ -15,7 +15,8 @@ import org.jetbrains.exposed.sql.Table
     primaryKey = "id",
     singularName = "Category",
     pluralName = "Categories",
-    groupName = "Products"
+    groupName = "Products",
+    iconFile = "/static/images/category.png"
 )
 @AdminQueries(
     searches = ["name", "description"],

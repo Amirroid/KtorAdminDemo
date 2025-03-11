@@ -25,6 +25,7 @@ enum class UserRole { ADMIN, CUSTOMER, BUYER }
     groupName = "Profiles",
     singularName = "User",
     pluralName = "Users",
+    iconFile = "/static/images/profile.png"
 )
 @AdminQueries(
     searches = ["username", "email", "phone_number"],

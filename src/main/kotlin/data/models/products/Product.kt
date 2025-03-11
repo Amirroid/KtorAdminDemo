@@ -19,7 +19,8 @@ import org.jetbrains.exposed.sql.kotlin.datetime.datetime
 @ExposedTable(
     "product",
     "id",
-    groupName = "Products"
+    groupName = "Products",
+    iconFile = "/static/images/products.png"
 )
 @PanelDisplayList(
     "name",

@@ -12,7 +12,8 @@ import org.jetbrains.exposed.sql.Table
     "id",
     singularName = "Cart Item",
     pluralName = "Cart Items",
-    groupName = "Cart"
+    groupName = "Cart",
+    iconFile = "/static/images/box.png"
 )
 object CartItem : Table() {
     @IgnoreColumn

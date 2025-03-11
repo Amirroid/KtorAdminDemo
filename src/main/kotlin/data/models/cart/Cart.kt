@@ -11,7 +11,10 @@ import ir.amirreza.data.models.profile.Users
 import org.jetbrains.exposed.sql.ReferenceOption
 import org.jetbrains.exposed.sql.Table
 
-@ExposedTable("cart", "id", groupName = "Cart")
+@ExposedTable(
+    "cart", "id", groupName = "Cart",
+    iconFile = "/static/images/bag.png"
+)
 @AdminQueries(
     searches = ["user_id.full_name"]
 )
