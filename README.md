@@ -23,5 +23,4 @@ http://localhost:8080/admin
 
 ## 📖 More Information
 
-Check out the full documentation and latest updates in the *
-*[KtorAdmin repository](https://github.com/Amirroid/KtorAdmin)**.
+Check out the full documentation and latest updates in the **[KtorAdmin repository](https://github.com/Amirroid/KtorAdmin)**.
