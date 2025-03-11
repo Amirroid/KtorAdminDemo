@@ -80,6 +80,6 @@ tasks.withType<Jar> {
         attributes["Main-Class"] = application.mainClass
     }
 }
-tasks {
-    create("stage").dependsOn("installDist")
+tasks.build {
+    dependsOn("shadowJar")
 }
