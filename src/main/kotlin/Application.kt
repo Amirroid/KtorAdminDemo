@@ -1,6 +1,7 @@
 package ir.amirreza
 
 import io.ktor.server.application.*
+import ir.amirreza.data.crypto.PasswordHasher
 import org.jetbrains.exposed.sql.Database
 
 fun main(args: Array<String>) {

@@ -29,6 +29,7 @@ fun Application.configureAdmin() {
         registerValueMapper(PasswordValueMapper)
         registerPreview(ImagePreview)
         provideMenu { menuItems }
+        maxItemsInPage = 10
     }
 }
 

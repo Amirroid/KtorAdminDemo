@@ -1,25 +1,27 @@
 # KtorAdminDemo 🚀
 
-A simple demo of **[KtorAdmin](https://github.com/Amirroid/KtorAdmin)** – a powerful admin panel generator for **Ktor**
-applications.
+A simple demo of **[KtorAdmin](https://github.com/Amirroid/KtorAdmin)** – a powerful admin panel generator for **Ktor** applications. For an online demo, visit [this link](https://ktoradmindemo-production.up.railway.app/admin).
 
 ## 🚀 Running the Demo
 
-1. Clone the repository:
+Clone the repository:
 ```sh
 git clone https://github.com/Amirroid/KtorAdminDemo.git
 cd KtorAdminDemo
-```
-
-2. Build and run the project:
+```  
+Update the database configuration in [`application.yaml`](./src/main/resources/application.yaml) by replacing the following values:
+```yaml
+db:
+  username: "${POSTGRES_USER}:amirreza"
+  password: "${POSTGRES_PASSWORD}:your_password"
+  url: "${DATABASE_URL}:jdbc:postgresql://localhost:5432/postgres"
+  driver: "org.postgresql.Driver"
+```  
+Then, build and run the project:
 ```sh
 ./gradlew run
-```
-
-3. Access the admin panel at:
-```
-http://localhost:8080/admin
-```
+```  
+Access the admin panel at `http://localhost:8080/admin`.
 
 ## 📖 More Information
 

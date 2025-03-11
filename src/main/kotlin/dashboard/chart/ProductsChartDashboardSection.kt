@@ -11,7 +11,7 @@ class ProductsChartDashboardSection : ChartDashboardSection() {
     override val tableName: String
         get() = "product"
     override val labelField: String
-        get() = "created_at"
+        get() = "name"
     override val valuesFields: List<ChartField>
         get() = listOf(
             ChartField(
@@ -21,6 +21,8 @@ class ProductsChartDashboardSection : ChartDashboardSection() {
     override val chartStyle: AdminChartStyle
         get() = AdminChartStyle.LINE
 
+    override val limitCount: Int?
+        get() = 10
 
     override fun provideBorderColor(label: String, valueField: String): String? {
         return "black"

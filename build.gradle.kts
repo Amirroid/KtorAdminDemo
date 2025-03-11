@@ -57,7 +57,7 @@ dependencies {
     implementation("org.postgresql:postgresql:42.7.4")
 
     // KtorAdmin
-    val ktorAdmin = "0.0.1-alpha8"
+    val ktorAdmin = "0.0.1"
     implementation("io.github.amirroid:KtorAdmin:$ktorAdmin")
     ksp("io.github.amirroid:KtorAdmin:$ktorAdmin")
 

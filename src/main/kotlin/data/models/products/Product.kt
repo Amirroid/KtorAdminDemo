@@ -50,7 +50,7 @@ object Product : Table() {
     @ColumnInfo("stock_quantity", defaultValue = "0")
     val stockQuantity = integer("stock_quantity").default(0)
 
-    @ColumnInfo("image_url", nullable = true)
+    @ColumnInfo("image_url", nullable = true, verboseName = "Image")
     @LocalUpload
     @Preview("image")
     val imageUrl = varchar("image_url", 255).nullable()
