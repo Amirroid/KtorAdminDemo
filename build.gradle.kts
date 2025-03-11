@@ -81,3 +81,6 @@ tasks.withType<Jar> {
         attributes["Main-Class"] = "ir.amirreza.ApplicationKt"
     }
 }
+tasks {
+    create("stage").dependsOn("installDist")
+}

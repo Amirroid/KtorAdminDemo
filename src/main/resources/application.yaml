@@ -10,5 +10,5 @@ ktor:
 db:
   username: "amirreza"
   password: "your_password"
-  url: "jdbc:postgresql://db:5432/postgres"
+  url: "jdbc:postgresql://localhost:5432/postgres"
   driver: "org.postgresql.Driver"
