@@ -12,9 +12,9 @@ cd KtorAdminDemo
 Update the database configuration in [`application.yaml`](./src/main/resources/application.yaml) by replacing the following values:
 ```yaml
 db:
-  username: "${POSTGRES_USER}"
-  password: "${POSTGRES_PASSWORD}"
-  url: "${DATABASE_URL}"
+  username: "$POSTGRES_USER"
+  password: "$POSTGRES_PASSWORD"
+  url: "$DATABASE_URL"
   driver: "org.postgresql.Driver"
 ```  
 Then, build and run the project:
