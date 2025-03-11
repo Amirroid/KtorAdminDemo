@@ -8,8 +8,14 @@ ktor:
     port: "$PORT:8080"
     host: 0.0.0.0
 
+#db:
+#  username: "${POSTGRES_USER}:amirreza"
+#  password: "${POSTGRES_PASSWORD}:your_password"
+#  url: "${DATABASE_URL}:jdbc:postgresql://localhost:5432/postgres"
+#  driver: "org.postgresql.Driver"
+
 db:
-  username: "${POSTGRES_USER}:amirreza"
-  password: "${POSTGRES_PASSWORD}:your_password"
-  url: "${DATABASE_URL}:jdbc:postgresql://localhost:5432/postgres"
-  driver: "org.postgresql.Driver"
+  username: ${POSTGRES_USER}
+  password: ${POSTGRES_PASSWORD}
+  url: ${DATABASE_URL}
+  driver: org.postgresql.Driver
