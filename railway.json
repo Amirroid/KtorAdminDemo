@@ -2,5 +2,8 @@
   "$schema": "https://schema.up.railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "java $JAVA_OPTS -jar build/libs/ktor-app.jar"
   }
 }
