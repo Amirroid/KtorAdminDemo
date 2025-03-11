@@ -1,0 +1,2 @@
+[start]
+cmd = "java -jar build/libs/ktor-app.jar"
