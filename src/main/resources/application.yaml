@@ -17,5 +17,5 @@ ktor:
 db:
   username: ${POSTGRES_USER}
   password: ${POSTGRES_PASSWORD}
-  url: ${DATABASE_URL}
+  url: jdbc:${DATABASE_URL}
   driver: org.postgresql.Driver
