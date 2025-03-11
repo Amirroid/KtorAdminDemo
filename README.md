@@ -6,18 +6,20 @@ applications.
 ## 🚀 Running the Demo
 
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/Amirroid/KtorAdminDemo.git
-   cd KtorAdminDemo
-   ```
+```sh
+git clone https://github.com/Amirroid/KtorAdminDemo.git
+cd KtorAdminDemo
+```
+
 2. Build and run the project:
-   ```sh
-   ./gradlew run
-   ```
+```sh
+./gradlew run
+```
+
 3. Access the admin panel at:
-   ```
-   http://localhost:8080/admin
-   ```
+```
+http://localhost:8080/admin
+```
 
 ## 📖 More Information
 
