@@ -9,7 +9,7 @@ ktor:
     host: 0.0.0.0
 
 db:
-  username: "${POSTGRES_USER:amirreza"
-  password: "${POSTGRES_PASSWORD:your_password"
-  url: "${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres"
+  username: "$POSTGRES_USER:amirreza"
+  password: "$POSTGRES_PASSWORD:your_password"
+  url: "$DATABASE_URL:jdbc:postgresql://localhost:5432/postgres"
   driver: "org.postgresql.Driver"
