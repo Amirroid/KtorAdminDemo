@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schema.up.railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "./gradlew -p server clean build -x check -x test"
+  },
+  "deploy": {
+    "startCommand": "java $JAVA_OPTS -jar server/build/libs/ktor-app.jar"
+  }
+}
